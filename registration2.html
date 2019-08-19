@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Wiki Enzacta</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="login/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="login/vendor/jquery-ui/jquery-ui.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="login/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+           <!-- <img src="https://wikienzacta.000webhostapp.com/Imagenes/ENZ-BACK1.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form id="signup-form" class="signup-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">First name</label>
+                                <input type="text" class="form-input" name="first_name" id="first_name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last name</label>
+                                <input type="text" class="form-input" name="last_name" id="last_name" />
+                            </div>
+                            
+                        </div>
+                         <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">email</label>
+                                <input type="email" class="form-input" name="email" id="email" />
+                            </div>
+                             </div>
+                        <div class="form-row">
+                            <div class="form-group form-icon">
+                                <label for="birth_date">Birth date</label>
+                                <input type="text" class="form-input" name="birth_date" id="birth_date" placeholder="MM-DD-YYYY" />
+                            </div>
+                            <div class="form-group">
+                                    <label for="country">Gender</label>
+                                    <div class="select-list">
+                                        <select name="gender" id="gender" required>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                        </div>
+                       
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-input" name="password" id="password"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re_password">Repeat your password</label>
+                                <input type="password" class="form-input" name="re_password" id="re_password"/>
+                            </div>
+
+                        </div>
+                        
+                                
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <div class="select-list">
+                                        <select name="country" id="country" required>
+                                            <option value="US">United State</option>
+                                            <option value="MX">Mexico</option>
+                                            <option value="CN">Canada</option>
+                                            <option value="CO">Colombia</option>
+                                            <option value="SV">El Salvador</option>
+                                            <option value="GT">Guatemala</option>
+                                            <option value="NZ">New Zeland</option>
+                                            <option value="PH">Philipines</option>
+                                            <option value="KR">Sur Korea</option>
+                                            <option value="ES">España</option>
+                                            <option value="TW">Taiwan</option>
+                                            <option value="UK">United Kingdom</option>
+                                            <option value="HK">Honkong</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                      
+                        <div class="form-group">
+                            <input type="button" class="button" value="Registrar" id="registrar" name="registrar">
+                            <input  name="submit" id="submit" class="form-submit" value="Submit"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="login/vendor/jquery/jquery.min.js"></script>
+    <script src="login/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="login/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="login/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="login/js/main.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#registrar").click(function(){
+            $.ajax({
+                type:'post',
+                url:'PHP/Register.php',
+                dataType:'json',
+                data: {first_name:$("#first_name").val(),last_name:$("#last_name").val(),email:$("#email").val(),birth_date:$("#birth_date").val(),gender:$("#gender").val(),password:$("#password").val(),country:$("#country").val()},
+                success:function(res){
+                    var respuesta;
+                    respuesta=res.success;
+                    respuesta1=res.var;
+                    if(respuesta==true){
+                        alert("Se inserto correctamente!");
+                        alert(res.var);
+                    }
+                    else{
+                        alert(res.respu);
+                    }
+                },error:function(res){
+                    alert(res['codigo']);
+                }
+            });
+        });
+    });
+ </script>
+</body>
+</html>

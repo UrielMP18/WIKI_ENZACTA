@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar sesión</title>
+  <link href='' rel='stylesheet prefetch' type="text/css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+		<label for="tab-1" class="tab">Login</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up">
+		<label for="tab-2" class="tab">Registration</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">Email</label>
+					<input id="email" name="email" type="text" class="input" required />
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="password" name="password" type="password" class="input" data-type="password" required />
+				</div>
+				<div class="group"></div>
+					<div class="group">
+			<input name="Login" type="button" class="button" value="Login" id="Login">
+					</div>
+				<div class="hr"></div>
+					<div class="foot-lnk">
+						<span class="txt1">
+							Forgot:
+						</span>
+						<a href="#" class="txt2">
+							Username / Password?
+						</a>				
+					</div>
+				</div>
+			<div class="sign-up-htm">
+				<div class="group">
+					<label for="first_name" class="label">First Name</label>
+					<input id="first_name" name="first_name" type="text" class="input" required />
+				</div>
+				<div class="group">
+					<label for="last_name" class="label">Last Name</label>
+					<input id="last_name" name="last_name" type="text" class="input" required / >
+				</div>
+				<div class="group">
+					<label for="email" class="label">Email</label>
+					<input id="email" name="email" type="email" class="input" required />
+				</div>
+				<div class="group">
+					<label for="birth_date" class="label">Birth Date</label>
+					<input id="birth_date" name="birth_date" type="number" class="input"/>
+				</div>
+				<div class="group">
+					<label for="gender" class="label">Gender</label>
+					<input id="gender" name="gender" type="text" class="input" required />
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="password" name="password" type="password" class="input" data-type="password" required />
+				</div>
+				<div class="group">
+					<label for="pass2" class="label">Repeat Your Password</label>
+					<input id="password2" name="password2" type="password" class="input" data-type="password" required />
+				</div>
+				<div class="group">
+					<label for="country" class="label">country</label>
+					<input id="country" name="country" type="text" class="input" required />
+				</div>
+<div class="group">
+	<label for="pass" class="label"></label>
+				</div>
+				<div class="group">
+					<input type="button" class="button" value="Registrar" id="registrar" name="registrar">
+				
+				
+				</div>
+				<div class="hr"></div>
+<div class="foot-lnk">
+					<label for="tab-1"></div>
+			</div>
+		</div>
+	</div>
+</div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script type="text/javascript">
+ 	$(document).ready(function(){
+ 		$("#Login").click(function(){
+ 			$.ajax({
+ 				type:'post',
+ 				url:'PHP/Login.php',
+ 				dataType:'json',
+ 				data: {clave_e:$("#username").val(),password:$("#password").val()},
+ 				success:function(res){
+ 					var respuesta;
+ 					respuesta=res.success;
+ 					if(respuesta==true){
+ 						document.location.href="Proyectos.php";
+ 					}
+					else{
+						alert(res.respu);
+	 					$("#username").val("");
+	 					$("#password").val("");
+					}
+ 				},error:function(res){
+ 					alert(res['codigo']);
+ 				}
+ 			});
+ 		});
+ 	});
+ </script>
+
+
+<script type="text/javascript">
+ 	$(document).ready(function(){
+ 		$("#registrar").click(function(){
+ 			$.ajax({
+ 				type:'post',
+ 				url:'PHP/Register.php',
+ 				dataType:'json',
+ 				data: {clave_e:$("#clave_e").val(),password:$("#password2").val(),correo:$("#correo").val(),age:$("#age").val(),nombre:$("#nombre").val(),apellidos:$("#apellidos").val()},
+ 				success:function(res){
+ 					var respuesta;
+ 					respuesta=res.success;
+ 					if(respuesta==true){
+ 						alert("Se inserto correctamente!");
+ 					}
+					else{
+						alert(res.respu);
+					}
+ 				},error:function(res){
+ 					alert(res['codigo']);
+ 				}
+ 			});
+ 		});
+ 	});
+ </script>
+
+</body>
+</html>
