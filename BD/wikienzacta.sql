@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-08-2019 a las 16:40:35
+-- Tiempo de generación: 29-08-2019 a las 19:09:06
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.4
 
@@ -47,7 +47,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `first_name`, `last_name`, `email`, `birth_date`, `gender`, `pass`, `country`, `status`, `ip_address`, `register_date`, `id_nivel`, `last_date`) VALUES
-(1, 'test', 'test', 'ds@enzacta.net', '2019-07-29', 'Male', '698d51a19d8a121ce581499d7b701668', 'MÃ©xico', 1, '::1', '0000-00-00 00:00:00', 1, '0000-00-00 00:00:00');
+(1, 'tes', 'test', 'urielm@enzacta.net', '2019-08-21', 'Male', '698d51a19d8a121ce581499d7b701668', 'MÃ©xico', 1, '::1', '2019-08-29 06:01:14', 1, '0000-00-00 00:00:00'),
+(2, 'tes', 'test', 'albertom@enzacta.net', '2019-08-21', 'Male', '7ea54f5363155965a69aee3feb05c1de', 'MÃ©xico', 1, '::1', '2019-08-29 07:01:14', 1, '0000-00-00 00:00:00');
 
 --
 -- Índices para tablas volcadas
@@ -67,7 +68,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
