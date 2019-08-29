@@ -29,5 +29,4 @@ function get_real_ip(){
     }
 }
  
- 
 ?>
