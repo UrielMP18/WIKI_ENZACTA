@@ -11,14 +11,14 @@
   <div class="login-wrap">
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked>
-		<label for="tab-1" class="tab" style="size: 30px">Login</label>
+		<label for="tab-1" class="tab">Login</label>
 		<input id="tab-2" type="radio" name="tab" class="sign-up">
-		<label for="tab-2" class="tab">Registration Alberto test</label>
+		<label for="tab-2" class="tab">Registration</label>
 		<div class="login-form">
 			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user" class="label">Email</label>
-					<input id="email" name="email" type="text" class="input" required />
+					<input id="user" name="user" type="text" class="input" required />
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
@@ -41,41 +41,44 @@
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="first_name" class="label">First Name</label>
-					<input id="first_name" name="first_name" type="text" class="input" required />
+					<input id="first_name" name="first_name" type="text" class="input verifyinput" required />
 				</div>
 				<div class="group">
 					<label for="last_name" class="label">Last Name</label>
-					<input id="last_name" name="last_name" type="text" class="input" required / >
+					<input id="last_name" name="last_name" type="text" class="input verifyinput" required / >
 				</div>
 				<div class="group">
 					<label for="email" class="label">Email</label>
-					<input id="email" name="email" type="email" class="input" required />
+					<input id="email" name="email" type="email" class="input verifyinput" required />
 				</div>
 				<div class="group">
 					<label for="birth_date" class="label">Birth Date</label>
-					<input id="birth_date" name="birth_date" type="number" class="input"/>
+					<input id="birth_date" name="birth_date" type="date" class="input verifyinput"/>
 				</div>
 				<div class="group">
 					<label for="gender" class="label">Gender</label>
-					<input id="gender" name="gender" type="text" class="input" required />
+					<select id="gender" name="gender" class="input verifyinput" required >
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>  
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
-					<input id="password" name="password" type="password" class="input" data-type="password" required />
+					<input id="pass" name="pass" type="password" class="input verifyinput" data-type="password" required />
 				</div>
 				<div class="group">
 					<label for="pass2" class="label">Repeat Your Password</label>
-					<input id="password2" name="password2" type="password" class="input" data-type="password" required />
+					<input id="pass2" name="pass2" type="password" class="input verifyinput" data-type="password" required />
 				</div>
 				<div class="group">
 					<label for="country" class="label">country</label>
-					<input id="country" name="country" type="text" class="input" required />
+					<input id="country" name="country" type="text" class="input verifyinput" required />
 				</div>
 <div class="group">
 	<label for="pass" class="label"></label>
 				</div>
 				<div class="group">
-					<input type="button" class="button" value="Registrar" id="registrar" name="registrar">
+					<input type="button" class="button" value="Register" id="registrar" name="registrar">
 				
 				
 				</div>
@@ -87,58 +90,8 @@
 	</div>
 </div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <script type="text/javascript">
- 	$(document).ready(function(){
- 		$("#Login").click(function(){
- 			$.ajax({
- 				type:'post',
- 				url:'PHP/Login.php',
- 				dataType:'json',
- 				data: {clave_e:$("#username").val(),password:$("#password").val()},
- 				success:function(res){
- 					var respuesta;
- 					respuesta=res.success;
- 					if(respuesta==true){
- 						document.location.href="Proyectos.php";
- 					}
-					else{
-						alert(res.respu);
-	 					$("#username").val("");
-	 					$("#password").val("");
-					}
- 				},error:function(res){
- 					alert(res['codigo']);
- 				}
- 			});
- 		});
- 	});
- </script>
-
-
-<script type="text/javascript">
- 	$(document).ready(function(){
- 		$("#registrar").click(function(){
- 			$.ajax({
- 				type:'post',
- 				url:'PHP/Register.php',
- 				dataType:'json',
- 				data: {clave_e:$("#clave_e").val(),password:$("#password2").val(),correo:$("#correo").val(),age:$("#age").val(),nombre:$("#nombre").val(),apellidos:$("#apellidos").val()},
- 				success:function(res){
- 					var respuesta;
- 					respuesta=res.success;
- 					if(respuesta==true){
- 						alert("Se inserto correctamente!");
- 					}
-					else{
-						alert(res.respu);
-					}
- 				},error:function(res){
- 					alert(res['codigo']);
- 				}
- 			});
- 		});
- 	});
- </script>
+ <script src="JS/Login.js"></script>
+<script src="JS/RegisterAccount.js"></script>
 
 </body>
 </html>
