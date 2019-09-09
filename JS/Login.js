@@ -11,7 +11,7 @@ $(document).ready(function(){
 			login();
 		} else {
 			alert("Email address is incorrect!! Verify please.");
-			$("#email").css("backgroundColor", "red");
+			$("#username").css("backgroundColor", "red");
 		}
 	}
 

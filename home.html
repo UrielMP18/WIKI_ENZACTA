@@ -10,6 +10,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		
 	</head>
 	<body class="is-preload">
 
@@ -22,9 +24,14 @@
 
 							<!-- Header -->
 								<header id="header">
-									
+									<ul class="icons menu">
+										<li id="homemenu" class="colormenu" >Home</li>
+										<li id="favoritemenu" class="colormenu">Favorites</li>
+										<li id="popularmenu" class="colormenu">More Popular</li>
+										<li id="newmenu" class="colormenu">New</li>
+									</ul>
 									<ul class="icons">
-									  <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
@@ -50,9 +57,81 @@
 							<!-- Section mini diamantes -->
 
 							<!-- Section -->
-								<section>
+								<section id="Favorite" style="display: none;">
 									<header class="major">
 										<h2>Favorites</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<h3>Dual Team Bonuses</h3>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<h3>IBO Registration</h3>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<h3>Autoship</h3>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3>Order Regular</h3>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										</div>
+								</section>
+
+								<section id="Popular" style="display: none;">
+									<header class="major">
+										<h2>Popular</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<h3>Dual Team Bonuses</h3>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<h3>IBO Registration</h3>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<h3>Autoship</h3>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3>Order Regular</h3>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										</div>
+								</section>
+
+								<section id="New" style="display: none;">
+									<header class="major">
+										<h2>New</h2>
 									</header>
 									<div class="posts">
 										<article>
@@ -106,9 +185,7 @@
 										<h1>Conntens</h1>
 									</header>
 									<ul>
-										<li><a href="index.html">Favorites</a></li>
-										<li><a href="generic.html">More Popular</a></li>
-										<li><a href="elements.html">New</a></li> <br/> 
+										
 										
                                     <header class="major">
 										<h2>Projects</h2>
@@ -183,22 +260,6 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
 										<h2>Contact</h2>
 									</header>
 									<p>The development and maintenance of this wiki is carried out by the digital strategy  		 									   department, if you need more information contact us</p>
@@ -212,7 +273,7 @@
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy;2019 ENZACTA USA, LLC <a href="https://unsplash.com">enzacta.com</a></p>
+									<p class="copyright">&copy;2019 ENZACTA USA, LLC <a href="https://www.enzacta.com">enzacta.com</a></p>
 								</footer>
 
 						</div>
@@ -221,11 +282,19 @@
 			</div>
 
 		<!-- Scripts -->
+
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script type="text/javascript" src="JS/menu.js"></script>
+			
+			
+			
+			
 
 	</body>
 </html>
