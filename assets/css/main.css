@@ -3377,10 +3377,16 @@ input, select, textarea {
 					height: 5em;
 					line-height: 5em;
 					position: absolute;
-					right: -0.5em;
+					right: 0.5em;
 					top: 0;
 				}
-
+				.colormenu {line-height: 9.9em;}
+		}
+		@media screen and (min-width: 768px) {
+			#header .menu {font-size: 1.2em;}
+		}
+		@media screen and (max-width: 375px) {
+			#header .menu {font-size: 1.18em;}
 		}
 
 /* Banner */
@@ -3614,3 +3620,5 @@ input, select, textarea {
 			cursor: pointer;
 			transition: color 0.2s ease-in-out;
 		}
+		.menuactive{color:#61d04d;}
+
