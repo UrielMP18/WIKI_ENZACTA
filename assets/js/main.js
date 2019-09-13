@@ -244,7 +244,7 @@
 				var $this = $(this);
 
 				$this.on('click', function(event) {
-
+					
 					// Prevent default.
 						event.preventDefault();
 
@@ -254,7 +254,6 @@
 
 					// Trigger resize (sidebar lock).
 						$window.triggerHandler('resize.sidebar-lock');
-
 				});
 
 			});
